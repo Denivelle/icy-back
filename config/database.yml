@@ -2,10 +2,11 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: <%= ENV.fetch('POSTGRES_USER', 'postgres') %>
-  password: <%= ENV.fetch('POSTGRES_PASSWORD', 'postgres') %>
-  host: <%= ENV.fetch('POSTGRES_HOST', 'localhost') %>
-  port: <%= ENV.fetch('POSTGRES_PORT', '5432') %>
+  username:
+  password:
+  # If you using docker the host should be "db"
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
@@ -15,8 +16,6 @@ test:
   <<: *default
   database: icy_test
 
-# For production is recommended to set DATABASE_URL env variable.
-# It will take precedence over the config defined here.
-# https://edgeguides.rubyonrails.org/configuring.html#connection-preference
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>

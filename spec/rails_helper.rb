@@ -11,6 +11,8 @@ SimpleCov.start 'rails' do
   add_filter 'app/admin'
   add_filter 'config'
   add_filter 'spec'
+  add_filter 'app/channels'
+  add_filter %w[app/jobs/application_job lib/tasks/code_analysis app/forms/application_form]
 end
 
 require File.expand_path('../config/environment', __dir__)

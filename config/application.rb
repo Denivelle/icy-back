@@ -36,6 +36,8 @@ module App
 
     config.add_autoload_paths_to_load_path = false
 
+    config.action_mailer.deliver_later_queue_name = 'mailers'
+
     config.generators do |g|
       g.test_framework :rspec
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
