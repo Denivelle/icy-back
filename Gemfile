@@ -19,11 +19,11 @@ gem 'flipper-active_record', '~> 0.28.3'
 gem 'flipper-ui', '~> 0.28.0'
 gem 'jbuilder', '~> 2.10'
 gem 'lefthook', '~> 1.4'
-gem 'oj', '~> 3.9', '>= 3.9.2'
+gem 'oj', '~> 3.16'
 gem 'pagy', '~> 4.0'
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 5.6'
-gem 'pundit', '~> 2.1'
+gem 'pundit', '~> 2.3'
 gem 'rack-cors', '~> 2.0'
 gem 'sass-rails', '~> 6.0.0'
 # gem 'sendgrid', '~> 1.2.4'
@@ -34,7 +34,7 @@ gem 'yaaf', '~> 2.2'
 
 group :development, :test do
   gem 'annotate', '~> 3.2', '>= 3.0.3'
-  gem 'dotenv-rails', '~> 2.7.6'
+  gem 'dotenv-rails', '~> 2.8.1'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'pry-byebug', '~> 3.9', platform: :mri
   gem 'pry-rails', '~> 0.3.9'
@@ -57,7 +57,7 @@ group :development do
   gem 'rubocop-rails', '~> 2.20', '>= 2.20.2', require: false
   gem 'rubocop-rake', '~> 0.6.0', require: false
   gem 'rubocop-rspec', '~> 2.23', require: false
-  gem 'spring', '~> 4.1'
+  gem 'spring', '~> 4.1.1'
 end
 
 group :test do
@@ -65,7 +65,7 @@ group :test do
   gem 'pg_query', '~> 4.2.1'
   gem 'prosopite', '~> 1.3.2'
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
-  gem 'simplecov', '~> 0.13.0', require: false
+  gem 'simplecov', '~> 0.22.0', require: false
   gem 'webmock', '~> 3.7', '>= 3.7.6'
 end
 
