@@ -12,7 +12,8 @@ jobs:
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
           POSTGRES_DB: icy_test
-          POSTGRES_USER: ''
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
         options: >-
@@ -32,6 +33,10 @@ jobs:
         with:
           bundler-cache: true
       - name: Setup Database
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          RAILS_ENV: test
         run: bundle exec rails db:create db:migrate
       - name: Check for untracked changes in schema.rb
         uses: rootstrap/check_untracked_changes@v1
