@@ -1,0 +1,25 @@
+pre-commit:
+  parallel: true
+  commands:
+    rubocop-linter:
+      glob: "{*.rb,*.rake,*.jbuilder,*.builder,*.ru,Capfile,Gemfile,Rakefile}"
+      files: git diff --name-only master
+      run: bundle exec rubocop --force-exclusion --autocorrect-all {files} | grep "no offenses"
+      tags: ruby lint
+      skip:
+        - merge
+        - rebase
+
+pre-push:
+  parallel: true
+  commands:
+    rubocop-linter:
+      glob: "{*.rb,*.rake,*.jbuilder,*.builder,*.ru,Capfile,Gemfile,Rakefile}"
+      files: git diff --name-only master..HEAD
+      run: bundle exec rubocop --parallel --force-exclusion {files}
+      tags: ruby lint
+
+
+skip_output:
+  - meta
+  - success #(output from runners with exit code 0)
