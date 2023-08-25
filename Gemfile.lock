@@ -166,6 +166,16 @@ GEM
       activesupport (>= 5.0)
       request_store (>= 1.0)
       ruby2_keywords
+    dry-core (0.9.1)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-initializer (3.1.1)
+    dry-matcher (0.9.0)
+      dry-core (~> 0.4, >= 0.4.8)
+    dry-monads (1.5.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.9, >= 0.9)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
     erubis (2.7.0)
     execjs (2.8.1)
@@ -517,6 +527,9 @@ DEPENDENCIES
   devise_token_auth (~> 1.2.2)
   dotenv-rails (~> 2.8.1)
   draper (~> 4.0, >= 4.0.1)
+  dry-initializer
+  dry-matcher
+  dry-monads
   factory_bot_rails (~> 6.2)
   faker (~> 2.13)
   flipper (~> 0.28.3)
