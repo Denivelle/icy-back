@@ -176,6 +176,15 @@ GEM
       railties (>= 5.0.0)
     faker (2.23.0)
       i18n (>= 1.8.11, < 2)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-mashify (0.1.1)
+      faraday (~> 2.0)
+      hashie
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
     ffi (1.15.5)
     flipper (0.28.3)
       concurrent-ruby (< 2)
@@ -193,6 +202,7 @@ GEM
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.7.0)
+    gli (2.21.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     google-protobuf (3.23.3)
@@ -200,6 +210,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
     hashdiff (1.0.1)
+    hashie (5.0.0)
     highline (2.1.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -264,6 +275,7 @@ GEM
     mini_portile2 (2.8.4)
     minitest (5.19.0)
     msgpack (1.7.2)
+    multipart-post (2.3.0)
     mustache (1.1.1)
     net-imap (0.3.7)
       date
@@ -280,7 +292,6 @@ GEM
       racc (~> 1.4)
     oj (3.16.0)
     orm_adapter (0.5.0)
-    pagy (4.11.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -449,6 +460,12 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
+    slack-ruby-client (2.1.0)
+      faraday (>= 2.0)
+      faraday-mashify
+      faraday-multipart
+      gli
+      hashie
     smart_properties (1.17.0)
     spring (4.1.1)
     sprockets (3.7.2)
@@ -511,7 +528,6 @@ DEPENDENCIES
   letter_opener (~> 1.7)
   listen (~> 3.8)
   oj (~> 3.16)
-  pagy (~> 4.0)
   pg (~> 1.5)
   pg_query (~> 4.2.1)
   prosopite (~> 1.3.2)
@@ -534,6 +550,7 @@ DEPENDENCIES
   sass-rails (~> 6.0.0)
   shoulda-matchers (~> 4.1, >= 4.1.2)
   simplecov (~> 0.22.0)
+  slack-ruby-client
   spring (~> 4.1.1)
   sprockets (~> 3.7.2)
   tzinfo-data

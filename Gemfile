@@ -20,17 +20,17 @@ gem 'flipper-ui', '~> 0.28.0'
 gem 'jbuilder', '~> 2.10'
 gem 'lefthook', '~> 1.4'
 gem 'oj', '~> 3.16'
-gem 'pagy', '~> 4.0'
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 5.6'
 gem 'pundit', '~> 2.3'
 gem 'rack-cors', '~> 2.0'
 gem 'sass-rails', '~> 6.0.0'
-# gem 'sendgrid', '~> 1.2.4'
 gem 'sprockets', '~> 3.7.2'
 gem 'yaaf', '~> 2.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+
+gem 'slack-ruby-client'
 
 group :development, :test do
   gem 'annotate', '~> 3.2', '>= 3.0.3'
