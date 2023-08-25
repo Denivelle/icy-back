@@ -22,7 +22,7 @@ require 'rspec/core'
 require 'spec_helper'
 require 'rspec/rails'
 
-ActiveRecord::Migration.maintain_test_schema!
+ActiveRecord::Migration.maintain_test_schema! if Rails.env.test?
 WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
