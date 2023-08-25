@@ -7,7 +7,8 @@ module Api
       skip_after_action :verify_authorized
 
       def slack
-        ::Slack::CreateTeamFromOauthV2Service.call(code: params[:code])
+        code = params[:code]
+        ::Slack::CreateTeamFromOauthV2Service.call(code:) if code
 
         head :ok
       end

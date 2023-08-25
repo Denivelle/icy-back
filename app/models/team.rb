@@ -18,4 +18,6 @@
 #
 class Team < ApplicationRecord
   self.primary_key = :id
+
+  validates :id, :token, presence: true, uniqueness: true, allow_blank: false
 end
