@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: { format: :json } do
       get :status, to: 'api#status'
+      resource :omniauth_callback, only: [] do
+        get :slack
+      end
 
       devise_scope :user do
         resource :user, only: %i[update show]

@@ -17,7 +17,6 @@ AllCops:
   Exclude:
     - bin/bundle
     - bin/yarn
-    - config/initializers/pagy.rb
     - db/schema.rb
     - node_modules/**/*
 
@@ -136,3 +135,8 @@ Style/SlicingWithRange:
 
 Style/StringConcatenation:
   Enabled: false
+
+Lint/MissingSuper:
+  Enabled: true
+  Exclude:
+    - 'app/services/**/*.rb'
