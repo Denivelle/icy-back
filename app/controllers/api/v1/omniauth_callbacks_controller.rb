@@ -12,6 +12,13 @@ module Api
 
         head :ok
       end
+
+      def sign_in_slack
+        code = params[:code]
+        ::Slack::CreateTeamUserFromOpenIdService.call(code:) if code
+
+        head :ok
+      end
     end
   end
 end
