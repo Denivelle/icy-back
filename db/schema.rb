@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_25_191942) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_26_223920) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +90,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_191942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true
+  end
+
+  create_table "team_users", id: :string, force: :cascade do |t|
+    t.string "token", null: false
+    t.string "team_id", null: false
+    t.string "email"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_team_users_on_id"
+    t.index ["team_id"], name: "index_team_users_on_team_id"
+    t.index ["token"], name: "index_team_users_on_token"
   end
 
   create_table "teams", id: :string, force: :cascade do |t|

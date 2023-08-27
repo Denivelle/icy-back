@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get :status, to: 'api#status'
       resource :omniauth_callback, only: [] do
         get :slack
+        get :sign_in_slack
       end
 
       devise_scope :user do
