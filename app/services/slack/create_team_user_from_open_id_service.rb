@@ -2,7 +2,7 @@
 
 module Slack
   class CreateTeamUserFromOpenIdService < ApplicationService
-    SIGN_IN_SLACK_REDIRECT_URI = Rails.application.routes.url_helpers.sign_in_slack_api_v1_omniauth_callback_url.fr
+    SIGN_IN_SLACK_REDIRECT_URI = Rails.application.routes.url_helpers.sign_in_slack_api_v1_omniauth_callback_url.freeze
 
     SIGN_IN_SLACK_URI = 'https://slack.com/openid/connect/authorize?response_type=code&scope=openid,profile,email&' \
                         "redirect_uri=#{SIGN_IN_SLACK_REDIRECT_URI}&client_id=#{ENV.fetch('SLACK_CLIENT_ID', nil)}"
