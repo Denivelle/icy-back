@@ -41,6 +41,7 @@ module Slack
       @slack_client.openid_connect_userInfo(token: @access_token)
     end
 
+    # :reek:FeatureEnvy
     def create_team_user!(user_info_response)
       TeamUser.create!(id: user_info_response['https://slack.com/user_id'],
                        team_id: user_info_response['https://slack.com/team_id'],
