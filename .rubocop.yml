@@ -140,3 +140,7 @@ Lint/MissingSuper:
   Enabled: true
   Exclude:
     - 'app/services/**/*.rb'
+
+
+Rspec/MultipleMemoizedHelpers:
+  Enabled: false
