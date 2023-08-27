@@ -24,6 +24,6 @@ FactoryBot.define do
     token { "xoxp-#{Faker::Alphanumeric.alphanumeric(number: 52)}}" }
     email { Faker::Internet.email }
     name { Faker::Name.name }
-    team factory: %i[team]
+    team_id { "T#{Faker::Alphanumeric.alphanumeric(number: 10).upcase}" }
   end
 end

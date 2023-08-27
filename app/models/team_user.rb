@@ -22,6 +22,5 @@ class TeamUser < ApplicationRecord
   self.primary_key = :id
 
   validates :id, :token, presence: true, uniqueness: true
-
-  belongs_to :team, inverse_of: :team_users
+  validates :team_id, presence: true, allow_blank: false
 end

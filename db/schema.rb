@@ -139,5 +139,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_26_223920) do
   end
 
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "team_users", "teams"
 end
