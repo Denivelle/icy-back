@@ -13,7 +13,7 @@ module Slack
       create_team!(oauth2_response)
 
       Success()
-    rescue ActiveRecord::RecordInvalid => e
+    rescue ActiveRecord::RecordInvalid, Slack::Web::Api::Errors::SlackError => e
       Failure(e)
     end
 
